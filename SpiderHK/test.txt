@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- saved from url=(0013)about:internet -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>会员登录-中国知网</title>
+    <link rel="stylesheet" type="text/css" href="detail/resource/gb/css/register.css" /> 
+
+<script type="text/javascript">
+    function GetQueryStringByName(query, name) {
+        var result = query.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+        if (result == null || result.length < 1) {
+            return "";
+        }
+        return result[1];
+    }
+    function GetUrl() {
+
+        return encodeURI(GetQueryStringByName(location.href, "url"));
+    }
+
+    function otherLogin(sType, sUrl) {
+        if (!sUrl) {
+            sUrl = "http://my.cnki.net/ThirdLogin/ThirdLogin.aspx";
+        }
+        if (!sType) {
+            return;
+        }
+        window.location.href = sUrl + "?to=" + sType + "&RedirectUrl=" + GetUrl();
+    }
+</script>
+  
+    </head>
+<body>
+    <form id="form1"  method='post' action='' target='_self'>
+    <div id="wrap">
+	<div class="header"><a target="_blank" href="http://www.cnki.net"></a></div>
+    <div class="main">
+    	<img style="display:block" src="http://piccache.cnki.net/kcms/detail/resource/gb/images/register3-mainTop.gif" width="880" height="6" />
+   	  <div class="centerBg">
+            <div class="part3 float-left">
+           	  <a class="straight-login" href="http://my.cnki.net/elibregister/CommonRegister.aspx" target="_blank"><img src="http://piccache.cnki.net/kcms/detail/resource/gb/images/register9.gif" width="218" height="35" /></a>
+              <p>您也可以使用合作网站账号登录知网：</p>
+                <ul>
+                	<li class="hasPadding"><a class="login-icon1" onclick="otherLogin('qq');" target="_blank"></a></li>
+                    <li><a class="login-icon2" onclick="otherLogin('sina');" target="_blank"></a></li>
+                    <li class="hasPadding"><a class="login-icon3" onclick="otherLogin('163');"  target="_blank"></a></li>
+                    <li><a class="login-icon4" onclick="otherLogin('weixin');" target="_blank"></a></li>
+                </ul>
+            </div>
+            <div class="boundary float-left" style="height:330px"></div>
+        <div class="part4">
+          <h1>登录中国知网</h1>
+          <p><label>用户名：</label><input type="text" value="" class="frame" id="username" name="username" /></p>
+          <div class="clear"></div>
+          <p><label>密&nbsp;&nbsp;码：</label><input type="password" value="" class="frame" id="password" name="password" /></p>
+          <div class="clear"></div>
+		  <div class="bnts"><input type="button" class="login" value="" onclick="login();"/><input type="button" class="ip" value=""  onclick="    login('true');"/></div>
+          <div class="function"><a href="http://my.cnki.net/mycnki/mycnkiFandPassword.htm" target="_blank" class="forgetPwd">忘记账号/密码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://my.cnki.net/elibregister/CommonRegister.aspx" target="_blank" class="sign-in">立即注册>></a></div>
+        </div>
+            
+      </div>
+    	<img style="display:block" src="http://piccache.cnki.net/kcms/detail/resource/gb/images/register3-mainBottom.gif" width="880" height="8" />
+    </div>
+    <div class="footer">服务热线：400-810-9888  订卡热线：400-819-9993&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;京ICP证040431号 <a href="http://www.cnki.net/images/006.jpg" target="_blank">互联网出版许可证</a> 新出网证(京)字008号<br />
+    @ 2014中国知网(CNKI) 《中国学术期刊(光盘版)》电子杂志社有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;京公网安备 11010802020460号</div>
+</div>
+           <script language="javascript" type="text/javascript">
+               document.getElementById('username').focus();
+               function checkform() {
+                   try {
+                       var user = document.getElementById('username').value;
+                       if (user == '') {
+                           window.alert('用户名不能为空！');
+                           return false;
+                       }
+                       //window.setTimeout("window.close()",2000);
+                   }
+                   catch (err) { }
+                   return true;
+               }
+
+               function login(useIP) {
+                   if (useIP == "true") {
+                       document.getElementById('username').value = "";
+                       document.getElementById('password').value = "";
+                       window.document.forms[0].submit();
+                   }
+                   else {
+                       if (checkform())
+                           window.document.forms[0].submit();
+                   }
+
+               }
+               function redirect() {
+                   window.open("http://my.cnki.net/elibregister/CommonRegister.aspx");
+               }
+    </script>
+        </form>
+</body>
+</html>
+
