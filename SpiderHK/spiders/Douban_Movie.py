@@ -113,6 +113,6 @@ class DoubanMovieSpider(scrapy.Spider):
 
     def userpass(self):  # Dict of Douban Usernames and Passwords
         userpass_dict = {
-            '361914599@qq.com': 'hdq940623',
+            'username': 'password',
         }
         return userpass_dict
